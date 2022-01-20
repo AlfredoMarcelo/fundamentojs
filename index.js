@@ -248,8 +248,35 @@ seguira porque es solo <= menor o igual y parará el bubcle.
 //----------------------Practica juego adivinar------------------------------------------
 
 /*
+Math.random(): La funcion Math.random() retorna un punto flotante,
+un numero pseudo-aleatorio dentro del rango (0-1)
+
+let numeroMaquina = Math.floor(Math.random() * (10-1)) + 1;
+console.log(numeroMaquina);
+
+let vidas = 3
+
+let numeroUsuario = parseInt(prompt('Adivina el numero del 1 al 10'));
 
 
+while(numeroMaquina !== numeroUsuario && vidas >1 ){
+
+    let mensaje = (numeroMaquina > numeroUsuario) ? ' El numero maquina es mayor' :' El numero maquina es menor';
+    
+
+
+    console.log('Te equivocaste!' + mensaje)
+    numeroUsuario = parseInt(prompt('intenta nuevamente'))
+    vidas --
+}
+
+
+
+if(numeroMaquina === numeroUsuario){
+    console.log("ganaste 🎈🎈🎈🏆")
+}else{
+    console.log("perdiste 💩💩💩")
+}
 */
 
 
