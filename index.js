@@ -249,7 +249,17 @@ seguira porque es solo <= menor o igual y parará el bubcle.
 
 /*
 Math.random(): La funcion Math.random() retorna un punto flotante,
-un numero pseudo-aleatorio dentro del rango (0-1)
+un numero pseudo-aleatorio dentro del rango (0-1).
+
+Primero se crea un numero aleatorio, luego con prompt se captura un
+string del usuario para hacer la comparacion. Se utiliza el while
+para dar la oportunidad 3 veces al usuario y con el condicional
+if, se entrega una respuesta si acerto gano y si no perdio, esto
+se entrega con la comparacion del valor aleatorio y el valor
+capturado.
+
+
+
 
 let numeroMaquina = Math.floor(Math.random() * (10-1)) + 1;
 console.log(numeroMaquina);
