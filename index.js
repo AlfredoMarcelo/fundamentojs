@@ -594,8 +594,128 @@ afectado por el estado que esta dentro del Scope.
 //-----------------Const------------------------------------------
 
 /*
+Const tiene todas las caracteristicas increibles de LET, con la 
+ventaja adicional de que las variables declaradas usando CONST
+son de solo lectura. Son un valor constante, lo que significa
+que una vez que se asigna una variable CONST, no se puede 
+reasignar.
 
+Algunos desarrolladores prefieren asignar todas sus variables
+usando const de forma predeterminada, a menos que sepan que 
+necesitaran reasignar el valor. Solo en ese caso, usan LET.
+Esto seria en For, for of.
+
+
+const estado = true
+estado = false
+print:
+error
+
+for( const i = 0; i < 5; i++){
+    console.log(i)
+}
+print:
+error
+
+const estado = true
+if(estado){
+    const estado = false
+    console.log(estado)
+}
+console.log(estado)
+print:
+false
+true
+
+Es importante comprender que los objetos, arrays y las funciones
+asignados a una variable const siguen siendo mutables. El
+uso de const solo evita la reasignacion del identificador
+de variable.
+
+const frutas = [];
+frutas[0] = "sandia"
+console.log(frutas)
+print:
+["sandia"]
+
+En este ejemplo, se esta modificando el contenido de la variable
+const, para eso se asigna el [0].
 
 */
+
+
+
+//-----------------Metodos de Array(push, pop, shift, unshift)------------------------------------------
+
+/*
+El metodo push(), añade uno o mas elementos al final de un
+array y devuelve la nueva longitud del array.
+
+const frutas = ["sandia","uva"]
+frutas.push("pera")
+console.log(frutas)
+print:
+sandia, uva
+
+El metodo unshift() agrega uno o mas elementos al inicio
+del array, y devuelve la nueva longitud del array.
+
+El metodo shift() elimina el primer elemento del array y lo
+retorna. Este metodo modifica la longitud del array.
+
+const frutas = ["sandia","uva"]
+const frutaEliminada = frutas.shift();
+console.log(frutas)
+console.log(frutaEliminada)
+print:
+uva
+sandia
+
+El metodo pop() elimina el ultimo elemento de un array
+y lo devuelve
+
+const frutas = ["sandia","uva"]
+const frutaEliminada = frutas.pop();
+console.log(frutas)
+console.log(frutaEliminada)
+print:
+sandia
+uva
+*/
+
+
+
+//-----------------Practica de array------------------------------------
+
+/*
+
+En este ejemplo hay tres partes, la primera es crear el array
+que contendra las frutas, luego se realiza la pregunta con 
+un prompt, si el usuario desea agregar más se utiliza un while
+que creara un bucle, que agegara una fruta si el usuario
+le da aceptar(true) al confirm. Si el usuario le da a 
+cancelar(false, no seguira el codigo), pasara a la 3parte
+donde se pintara el array frutas mas un string de compraste.
+
+
+const frutas = [];
+const fruta = prompt('Bienvenido: Que fruta deseas comprar?🍍');
+frutas.push(fruta);
+
+while(confirm('¿desea agregar otra fruta a su carrito🛒')){
+    const fruta = prompt('Que fruta deseas comprar?🍌');
+    frutas.push(fruta);
+}
+
+console.log("compraste")
+for (const fruta of frutas){
+    console.log(fruta);
+}
+
+*/
+
+
+
+
 
 //console.log("mi nombre es alfredo y soy el mejor 🍔");
