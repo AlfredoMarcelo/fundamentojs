@@ -290,10 +290,59 @@ if(numeroMaquina === numeroUsuario){
 */
 
 
+//----------------------Array------------------------------------------
+
+/*
+Los array, arreglo, colecciones son objetos similares a una lista cuyo prototipo proporciona
+metodos para efectuar operaciones de recorrido y de mutacion. Tanto
+la longitud como el tipo de los elementos de un array son variables.
+
+En un array la posicion empieza en 0, el length es el tamaño del array
+esto quiere decir la cantidad de elementos que contiene,
+
+Undefined: Una variable a la que no se le ha asignado un valor, o no se
+ha declarado en absoluto(no se declara, no existe)son de tipo
+undefined.
+
+
+let frutas = ["platano", "sandia", "perita"]
+
+console.log(frutas);
+console.log(frutas.length);
+console.log(frutas[0]);
+console.log(frutas[1]);
+console.log(frutas[2]);
+console.log(frutas[3]);
+console.log(frutas[4]);
+
+*/
+
+
+
+//----------------------Bucle For------------------------------------------
+
+/*
+For crea un bucle que consiste en tres explicaciones opcionales,
+encerradas en parentesis y separadas por puntos y comas, seguidas
+de una sentencia ejecutada en un bucle.
+primero recibe un indice (let i = 0);
+segundo recibe un punto de escape (i < frutas.length);
+tercero incrementar el indice ( i = i + 1)
+
+let frutas = ["platano", "sandia", "perita", "uva"]
+for(let i = 0; i<frutas.length; i = i+1 ){
+    console.log(frutas[i])
+}
+
+se utiliza el frutas.length para indicar el tamaño del array
+con esto, se vuelve dinamica la pintada, tomando en cuenta
+la disminucion o aumento del tamaño del array
+
+*/
 
 
 
 
 
 
-console.log("mi nombre es alfredo y soy el mejor 🍔");
+//console.log("mi nombre es alfredo y soy el mejor 🍔");
