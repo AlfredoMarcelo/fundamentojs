@@ -716,6 +716,115 @@ for (const fruta of frutas){
 
 
 
+//-----------------Funciones declarativas vs expesadas------------------------------------
+
+/*
+Funciones anonimas: 
+En javascript, usualmente no necesitas nombrar tus funciones,
+especialmente cuando se pasa una funcion como argumento a 
+otra funcion. En su lugar, creamos funciones inline(en linea)
+no necesitamos nombrar estas funciones porque no las reutilizamos
+en otro lugar.
+
+Funcion declarativa:
+Puede ser llamada antes o despues de ser declarara.
+
+function numero(min, max){
+    return Math.floor(Math.random() * (max-min) + min)   
+}
+
+console.log(numero(10,21))
+
+Funcion expresada:
+Funcion que se guarda en una variable y que no tiene nombre.
+Una funcion expresada no puede ser llamada antes de ser declarara.
+
+const numAzar = function(min, max){
+    return Math.floor(Math.random() * (max-min) + min)
+}
+console.log(numAzar(10,21))
+
+
+La forma correcta de definir una funcion varia segun el
+comportamiento que esperemos de la misma: con las funciones
+expresadas, tendremos que éstas no son evaluadas hasta que
+el interprete no alcance su posicion en el codigo, lo 
+cual puede generar errores en arquitectura muy anidadas.
+
+El hecho de que las funciones declarativas se evaluen antes
+que las expresiones, pueden producir comportamientos no
+deseados cuando forman parte de la condicionales.Para 
+estos casos, el uso de las funciones expresadas garantiza
+que estas formaran parte del flujo general del programa, lo
+cual puede evitarnos sorpresas en determinados entornos.
+
+*/
+
+
+
+//-----------------Funcion flecha o Arrow function------------------------------------
+
+/*
+Una expresion de funcion flecha es una alternativa compacta
+a una expresion de funcion tradicional. Sus limitantes son:
+No tiene sus propios enlaces a this o super y no se puede
+    usar como metodo.
+No tiene argumentos o palabras clave new.target.
+No apta para los metodos call, apply y bind.
+No se puede utilizar constructor.
+
+const azarFlecha = (min, max) => Math.floor(Math.random() * (max-min) + 1)
+
+console.log(azarFlecha(1,10));
+
+Con un solo parametro se puede omitir los parentesis, la ventaja
+es que en la arrow function no es necesario agregar el return
+basta agregar el codigo a ejecutar despues de la =>.
+
+Otra opcion que hay dentro de la funcion, es que se puede hacer 
+una operacion aritmetica con el parametro. En este ejemplo se 
+igual el min a 1 y max a 10, ahora solo se debe llamar a la 
+funcion y se obtendra un num aleatorio entre 1 y 9.
+Si solo se quiere dar valor a un parametro, si es al primero
+se utiliza ** y si se quiere dar valor al parametro 2 se
+utiliza ***null
+
+
+const azarFlecha = (min = 1, max = 10) => Math.floor(Math.random() * (max-min) + 1)
+
+console.log(azarFlecha());
+**console.log(azarFlecha(10));
+***console.log(azarFlecha(null,50));
+
+*/
+
+
+
+//-----------------ForEach para recorrer array------------------------------------
+
+/**
+El metodo forEach(), ejecuta la funcion indicada una vez por cada
+elemento del array. Tenemos la opcion de poder regresar el indice,
+y el array completo en cada recorrido.
+
+const frutas = ["sandia", "uvas", "peras"]
+
+frutas.forEach((fruta, index, array) => {
+    console.log(`${index}: ${fruta}`);
+    console.log(array);
+})
+print:
+1: sandia
+array
+2: uvas
+array
+3: peras
+array
+*/
+
+
+
+
 
 
 //console.log("mi nombre es alfredo y soy el mejor 🍔");
