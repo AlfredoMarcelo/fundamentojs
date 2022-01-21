@@ -423,7 +423,6 @@ solo lo lee.
 //----------------------Funciones 2------------------------------------------
 
 /*
-*/
 
 function saludar (name){
     return "bienvenido " + name
@@ -441,4 +440,162 @@ let numUno = prompt("ingrese el primer numero");
 let numDos = prompt("ingrese segundo numero");
 
 console.log(sumar(numUno, numDos));
+*/
+
+//----------------------JAVASCRITP CONCEPTOS CLAVES------------------------------------------
+
+/*
+Preocuparse por la eficiencia puede ser una gran distraccion. 
+Es otro factor más que complica el diseño del programa, y 
+cuando estás haciendo algo que ya es dificil, esa cosa extra de
+la que preocuparte puede ser paralizante. Por lo tanto, empieza
+siempre por escribir algo que sea correcto y facil de entender.
+Si te preocupa que sea demasiado lento, que normalmente no lo
+es, ya que la mayoria del codigo simplemente no se ejecuta con 
+la frecuencia suficiente para llevar una cantidad significativa
+de tiempo, puedes medirlo despues y mejorarlo si es necesario.
+
+*/
+
+
+
+//-----------------Interpolacion template string------------------------------------------
+
+/*
+Las plantillas de cadena de caracterees pueden contener
+marcadores, identificados por el signo de dolar y envueltos
+en llaves `${expresion}`. Las expresiones contenidas en los
+marcadores, junto con el texto entre ellas, son enviados
+como argumentos a una funcion.
+
+let nameUser = "alfredo"
+console.log("Bienvenido \n"+ nameUser)
+
+print:
+Bienvenido
+alfredo
+
+
+let nameUser = "alfredo"
+console.log(`bienvenido: ${nameUser.toUpperCase()}`)
+
+print:
+bienvenido: ALFREDO
+
+let estado = true;
+console.log(`
+${estado ? "online" :"offline"} ***usando operador ternario.
+`);
+
+print:
+online
+
+
+*/
+
+
+
+//-----------------Var vs  Let vs Const------------------------------------------
+
+/**
+Variable var, uno de los mayores problemas al declararla es que 
+puede sobreescribir las declaraciones de variables sin errores.
+
+var nombreUser = "alfredo"
+var nombreUser = "marcelo"
+console.log(nombreUser);
+print:
+marcelo
+
+La varbible Let, no permitira declarar dos veces la misma variable
+pero si deja sobreescribir el valor.
+
+let nombreUser = "alfredo"
+let nombreUser = "marcelo"
+console.log(nombreUser);
+print:
+SyntaxError
+
+let nombreUser = "alfredo"
+nombreUser = "marcelo"
+console.log(nombreUser);
+print:
+"marcelo"
+
+
+var estado = true
+
+if(estado ){
+    console.log('entro al if')
+    var estado = false
+}
+
+console.log(estado)
+print:
+entro al if
+false
+
+let estado = true
+if(estado ){
+    console.log('entro al if')
+    let estado = false
+}
+
+console.log(estado)
+print:
+entro al if
+false
+
+let estado = true
+if(estado ){
+    console.log('entro al if')
+    let estado = false
+    console.log(estado)
+}
+
+console.log(estado)
+print:
+entro al if
+false
+true
+
+Al usar let, el estado declarado de manera global no será
+afectado por el estado que esta dentro del Scope.
+
+*/
+
+
+
+//-----------------Scope------------------------------------------
+
+/**
+En simples palabras el "scope de una variable" hace referencia
+al lugar donde esta va a vivir o podra ser accesible.
+
+let estado = true
+if(estado ){
+    console.log('entro al if')
+    let estado = false
+    console.log(estado)
+}
+
+console.log(estado)
+print:
+entro al if
+false
+true
+
+Al usar let, el estado declarado de manera global no será
+afectado por el estado que esta dentro del Scope.
+
+*/
+
+
+//-----------------Const------------------------------------------
+
+/*
+
+
+*/
+
 //console.log("mi nombre es alfredo y soy el mejor 🍔");
