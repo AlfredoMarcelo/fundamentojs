@@ -342,7 +342,103 @@ la disminucion o aumento del tamaño del array
 
 
 
+//----------------------Bucle For of------------------------------------------
+
+/*
+For of: La sentencia for of, ejecuta un bloque de codigo
+para cada elemento de un objeto iterable, como lo son:
+String; Array; Objetos, no funciona con integers.
 
 
 
+let frutas = ["platano","sandia","uva","manzana"]
+
+for(let fruta of frutas){
+    console.log(fruta)
+}
+
+print: platano, sandia, uva, manzana
+
+let nameUser = "alfredo"
+
+for(let letra of nameUser){
+    console.log(letra)
+}
+print: 
+    a
+    l
+    f
+    r
+    e
+    d
+    o
+
+*/
+
+
+
+//----------------------Funciones------------------------------------------
+
+/*
+Las funciones son uno de los bloques de construccion fundamentales en 
+Javascript. Una funcion en Javascript es similar a un procedimiento 
+-un conjunto de instrucciones que realiza una tarea o calcula un valor,
+pero para que un procedimiento califique como funcion, debe tomar alguna
+entrada y devolver una salida donde hay alguna relacion obvia entre la 
+entrada y salida.
+
+Caracteristicas:
+.- El nombre de la funcion
+.- Una lista de parametros de la funcion, entre parentesis y separados
+    por comas
+.- Las declaraciones en JavaScript que definen la funcion, encerradas
+    entre llaves, {.....}.
+    
+    
+    function saludar (nombre){
+        console.log("bienvenido "+nombre);
+    }
+    saludar("alfredo");
+
+    print: bienvenido alfredo.
+    
+**Javascript lee desde arriba hacia abajo.
+*/
+
+
+//----------------------Hoisting------------------------------------------
+
+/*
+Hoisting sugiere que las declaraciones de variables y funciones son 
+fisicamente movidas al comienzo del codigo, pero esto no es lo que
+ocurre en realidad. Lo que sucede es que las declaraciones de varibles y 
+funciones son asignadas en memoria durante la fase de compilacion,
+pero quedan exactamente en donde las has escrito en el codigo.
+
+javascritp primero hace un barrido del codigo, no lo ejecuta,
+solo lo lee.
+*/
+
+
+//----------------------Funciones 2------------------------------------------
+
+/*
+*/
+
+function saludar (name){
+    return "bienvenido " + name
+    console.log("Bienvenido "+ name);
+}
+
+console.log(saludar("alfredo"));
+
+
+function sumar (n1, n2){
+    return parseInt(n1) + parseInt(n2)
+}
+
+let numUno = prompt("ingrese el primer numero");
+let numDos = prompt("ingrese segundo numero");
+
+console.log(sumar(numUno, numDos));
 //console.log("mi nombre es alfredo y soy el mejor 🍔");
