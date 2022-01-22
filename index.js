@@ -1084,5 +1084,172 @@ Object.getOwnPropertyNames()
 
 
 
-//-----------------Formas de recorrer un objeto------------------------------------
+//-----------------Destructuring Object------------------------------------
+
+/* 
+
+Destructuracion: La sintaxis de destructuracion es una
+expresion de javascript que permite desempacar valores
+de arreglo o propiedades de objetos en distintas
+variables.
+
+Para hacer el destructuring se utiliza las llaves{atributos}
+se puede utilizar un alias en el destructuring, se 
+agrega dos puntos despues de la propiedad ej:
+const {nombre : primernombre} = gato
+
+Tambien podemos crear variables dentro del destructuring,
+de esta manera:
+const {duerme: duermeGato, edad, enemigos, raza: razaGatuna = "no es de raza"} = gato
+
+const gato = {
+    "nombre":"valiente",
+    "duerme":"true",
+    "edad": 10,
+    "enemigos":["agua", "perros"]
+}
+
+const nombreGato = gato.nombre
+console.log(nombreGato)
+
+const {duerme: duermeGato, edad, enemigos, raza: razaGatuna = "no es de raza"} = gato
+console.log(duermeGato, enemigos, edad, razaGatuna)
+Para acceder a objetos anidados se hace lo siguiente:
+
+El destructuring no funciona con los metodos dentro del objeto
+const gato = {
+    "nombre":"valiente",
+    "duerme":"true",
+    "edad": 10,
+    "enemigos":["agua", "perros"],
+    "comer":(alimento)=>{
+        console.log(`${this.nombre} esta comiendo ${alimento}`)
+    }
+}
+
+esto dara un undefined
+
+
+Se puede hacer una destructuracion dentro de otra destructuracion.**
+
+const gato = {
+    "nombre":"valiente",
+    "duerme":"true",
+    "edad": 10,
+    "enemigos":["agua", "perros"],
+    "otros":{
+        "amigos": ["cobarde", "timido", "pegajoso"],
+        "favoritos": {
+            "comida": {
+                "fria": "salmon",
+                "caliente": "pollo"
+            }
+        }
+    }
+}
+
+const amigosGatos = gato.otros.amigos;
+console.log(amigosGatos)
+
+//const {amigos} = gato.otros; //esta es la mejor opcion.******
+//console.log(amigos)
+
+const {otros:{amigos}} = gato
+console.log(amigos)
+
+
+Esto tambien se puede aplicar a los array, pero utilizando
+corchetes[] en vez de llaves{}.
+
+const {amigos:amigosArray} = gato.otros;
+
+const [amigoUno, amigoDos, amigoTres] = amigosArray*****
+
+console.log(amigoUno, amigoDos,amigoTres)
+*/
+
+
+//-----------------Get y Set en Objetos literales------------------------------------
+
+
+/**
+Get enlaza la propiedad de un objeto con una funcion que sera
+llamada cuando la propiedad es buscada.
+Al trabajar con Get se debe tener exactamente CERO parametros.
+No debe haber multiples getters para una misma propiedad.
+
+const gato = {
+    "nombre":"valiente",
+    "duerme":"true",
+    "edad": 10,
+    "enemigos":["agua", "perros"],
+    get nombreMayuscula (){
+        return this.nombre.toLocaleUpperCase();
+    }
+}
+console.log(gato.nombreMayuscula);
+print:
+VALIENTE
+
+Set la sintaxis set asocia la propiedad de un objeto a una
+funcion que sera llamada cuando haya un
+intento de asignar valor a esa propiedad.
+Debe tener exactamente un parametro.
+
+En ambos al querer pintarlo, no se utiliza los () aunque sea un
+metodo.
+
+const gato = {
+    "nombre":"valiente",
+    "duerme":"true",
+    "edad": 10,
+    "enemigos":["agua", "perros"],
+    get nombreMayuscula (){
+        return this.nombre.toLocaleUpperCase();
+    },
+    set agregarEnemigo(nuevoEnemigo){
+        this.enemigos.push(nuevoEnemigo);
+    }
+}
+
+gato.agregarEnemigo = "superman";
+console.log(gato);
+*/
+
+
+//-----------------Por valor vs referencia------------------------------------
+
+/*
+Por valor: Cuando asignamos valores primitivos(Bolean, null
+Undefined, Number, String y Symbol), el valor asignado es una
+copia del valor que estamos asignando.
+let a = "hola"
+let b = a
+a = "chao"
+console.log(b)
+print:
+hola  ***Se mantiene porque b es una copia independiente de a.
+
+Por referencia: Pero cuando asignamos valores No primitivos
+o complejos (object, Array y Function), Javascript copia 
+"la referencia", lo que implica que nos se copia el valor
+en si, si no una referencia a traves de la cual accedemos
+al valor original.
+
+let a = ["hola"]
+let b = a //b es una referencia (como link) de a
+
+a.push("chao");
+console.log(b);
+print:
+['hola','chao']
+
+En este ejemplo b no se mantiene como ["hola"], si no 
+que cambia junto con a, esto pasa con los
+OBJETOS, ARRAY Y FUNCTION.
+*/
+
+
+
+
 //console.log("mi nombre es alfredo y soy el mejor 🍔");
