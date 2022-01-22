@@ -958,10 +958,11 @@ existe el atributo y si no esta devolvera un undefined
 
 //-----------------Propiedades vs Metodos------------------------------------
 
-/**
+/*
 Cuando queremos acceder, a una propiedad utilizamos
 objeto.propiedad , para el metodo es lo mismo pero al 
-finalizar se agregan ()
+finalizar se agregan (). Incluso en el mismo vs code
+indica cuando es una property o un method.
 
 const gato = {
     "nombre":"valiente",
@@ -977,4 +978,111 @@ console.log(amigos.length())
 */
 
 
+
+//-----------------Metodos en los objetos------------------------------------
+
+/*
+Un metodo es una funcion que esta dentro de un objeto
+La interpolacion dentro de un objeto si no se define el 
+nombre de la variable y su atributo que contiene el objeto, 
+puede tomar una variable global.
+Para eso podemos utilizar this. : 
+Que hace referencia al objetocontexto (o SCOPE) de 
+Javascript en el cual se está ejecutando el 
+codigo actual.
+
+En el caso de arrow function, cuando se utiliza este no tiene
+this o super y no se debe usar como metodo.
+
+const gato = {
+    "nombre":"valiente",
+    "duerme":"true",
+    "edad": 10,
+    "enemigos":["agua", "perros"],
+    "comerDos":(alimento)=>{
+        console.log(`${this.nombre} esta comiendo ${alimento}`)
+    }
+}
+
+En el ejemplo anterior pintara el this.nombre como UNDEFINED
+
+
+const gato = {
+    "nombre":"valiente",
+    "duerme":"true",
+    "edad": 10,
+    "enemigos":["agua", "perros"],
+    "comerDos"(alimento){
+        console.log(`${this.nombre} esta comiendo ${alimento}`)
+    },
+    listarEnemigos(){
+        this.enemigos.forEach((item)=>console.log(item))
+    }
+}
+gato.comerDos("maiz");
+gato.listarEnemigos();
+print:
+valiente esta comiendo maiz
+agua
+perros
+
+En este ejemplo si se utiliza la arrow function pero dentro de un 
+bucle forEach, aqui si funcionara porque el this va a fuera
+del arrow function.
+
+*/
+
+
+//-----------------Formas de recorrer un objeto------------------------------------
+/* 
+for of es para los arrays.
+For in:
+La instruccion for-in itera sobre todas las propiedades
+enumerables de un objeto que está codificado por cadenas.
+
+Por que usar for in?
+*Dado que for..in esta construido para iterar propiedades
+de obejto, no se recomienda su uso con arreglos y opciones como
+Array.prototype.forEach() y existe for..of, ¿cual podria ser
+el uso de for..in?
+*Es posible que se utilice de forma más practica con fines
+de depuracion, ya que es una forma facil de comprobar las 
+propiedades de un objeto(mediante la salida a la consola
+o de otro modo).
+*Aunque los arreglos suelen ser más practicos para almacenar
+datos, en situaciones en las que se prefiere un par clave-valor
+para trabajar con datos(con propiedades que actuan como la
+clave), puede haber casos en los que desees comprobar si 
+alguna de esas claves cumple un valor particular.
+
+Otra opcion es: Object.values()
+
+const gato = {
+    "nombre":"valiente",
+    "duerme":"true",
+    "edad": 10,
+    "enemigos":["agua", "perros"]
+}
+
+for(let propiedades in gato){
+    console.log(propiedades)
+    console.log(gato[propiedades])//con esto pintara los valores
+}
+
+console.log(Object.values(gato));
+Object.values(gato).forEach(item => console.log(item))
+Este devuelve un array con lo valores correspondientes a las 
+propiedades enumerables de un objeto.
+
+console.log(Object.values(gato));
+
+otras opciones son: 
+Object.entries()
+Object.Key()
+Object.getOwnPropertyNames()
+*/
+
+
+
+//-----------------Formas de recorrer un objeto------------------------------------
 //console.log("mi nombre es alfredo y soy el mejor 🍔");
