@@ -826,5 +826,155 @@ array
 
 
 
+//-----------------JAVASCRIPT OBEJETOS------------------------------------
+
+/*
+*Javascript está diseñado en un paradigma simple basado en objetos.
+
+*Un objeto es una coleccion de propiedades, y una propiedad es una
+asociacion entre un nombre(o clave) y un valor.
+
+*El valor de una propiedad puede ser una funcion, en cuyo caso
+la propiedad es conocida como un método.
+
+*Ademas los objetos que están predefinidos en el navegador, 
+puedes definir tus propios objetos.
+
+*Los objetos son similares a los arreglos(array), excepto que en
+lugar de usar indices para acceder y modificar sus datos,
+accedes a los datos en objetos a traves de propiedades(properties)
+ 
+ */
+
+
+
+//-----------------Objeto literal------------------------------------
+
+/*
+Se denomina objeto literal al objeto cuyas propiedades estan
+declaradas textualmente en el codigo. Un objeto estatico.
+Los atributos o propiedades se ordenan de manera alfabetica 
+de la A-Z.
+
+
+const gato = {
+    "nombre":"valiente",
+    "duerme":"true",
+    "edad": 10,
+    "enemigos":["agua", "perros"]
+}
+console.log(gato.nombre)
+console.log(gato["nombre"])
+
+esta es una manera de pintar una propiedad
+utilizando objeto["nombrepropiedad"] y se llama
+notacion de corchetes
+
+console.log(gato.duerme)
+console.log(gato["enemigos"][0])
+
+*/
+
+
+
+//-----------------Propiedad CRUD------------------------------------
+
+
+/*
+CRUD es un acronimo de 
+Crear(create)
+Leer(read)
+Actualizar(update)
+Eliminar(delete)
+
+
+hasOwnProperty
+
+A veces es util comprobar si existe
+la propiedad de un dado. Podemos utilizar
+el metodo .hasOwnProperty(propname) para
+determinar si un objeto tiene una propiedad
+con ese nombre. .hasOwnProperty() devuelve
+true o false si se encuentra la propiedad 
+o no.
+
+const gato = {
+    "nombre":"valiente",
+    "duerme":"true",
+    "edad": 10,
+    "enemigos":["agua", "perros"]
+}
+
+gato["color"] = "blanco"; CREATE
+gato.edad = 5             UPDATE
+delete gato.duerme        DELETED
+console.log(gato);        READ
+
+if(gato.hasOwnProperty("nombre")){
+   gato.nombre = "gatuno" 
+}
+console.log(gato.hasOwnProperty("edadq"))
+console.log(gato);
+
+*/
+
+
+
+//-----------------Obejetos anidados------------------------------------
+
+
+/**
+ Encadenamiento opcional: El operador de encadenamiento opcional
+ ?. permite leer el valor de una propiedad ubicada dentro de una
+ cadena de objetos conectados sin tener que validar expresamente
+ que cada referencia en la cadena sea valida.
+
+
+const gato = {
+    "nombre":"valiente",
+    "duerme":"true",
+    "edad": 10,
+    "enemigos":["agua", "perros"],
+    "otros":{
+        "amigos":["cobarde", "timido"],
+        "favoritos":{
+            "comida":{
+                "frio":"salmon",
+                "caliente":"pollo"
+             }
+         }
+     }
+ }
+ 
+console.log(gato.otros.favoritos.comida.caliente);
+console.log(gato.otros.favorito?.comida.caliente);
+
+agregando el ? despues de el atributo, preguntamos si 
+existe el atributo y si no esta devolvera un undefined
+
+*/
+
+
+
+//-----------------Propiedades vs Metodos------------------------------------
+
+/**
+Cuando queremos acceder, a una propiedad utilizamos
+objeto.propiedad , para el metodo es lo mismo pero al 
+finalizar se agregan ()
+
+const gato = {
+    "nombre":"valiente",
+    "duerme":"true",
+    "edad": 10,
+    "enemigos":["agua", "perros"]
+}
+
+const amigos = ["cobarde", "timido"];
+console.log(amigos.length())
+
+
+*/
+
 
 //console.log("mi nombre es alfredo y soy el mejor 🍔");
