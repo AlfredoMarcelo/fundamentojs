@@ -1252,4 +1252,28 @@ OBJETOS, ARRAY Y FUNCTION.
 
 
 
+
+//-----------------Metodos en Array------------------------------------
+
+
+/**
+Los metodos en lo array son muy utiles, estos metodos no mutan el
+array original, sino que nos devuelve uno nuevo.
+Se repasara:
+    map
+    find
+    filter
+    reduce
+
+Todo estro entra en lo que es la PROGRAMACION FUNCIONAL, que es 
+otro enfoque comun en el desarrollo de software (paradigma de
+programacion). En programacion funcional, el codigo esta organizado
+en funciones más pequeñas y basicas que se pueden combinar para
+construir programas de mayor complejidad.
+
+Paradigma de programacion: es una forma de ver y crear codigo de
+programacion. Para resolver problemas.
+*/
+
+
 //console.log("mi nombre es alfredo y soy el mejor 🍔");
