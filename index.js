@@ -1257,7 +1257,7 @@ OBJETOS, ARRAY Y FUNCTION.
 
 
 /**
-Los metodos en lo array son muy utiles, estos metodos no mutan el
+Los metodos en los arrays son muy utiles, los siguientes metodos no mutan el
 array original, sino que nos devuelve uno nuevo.
 Se repasara:
     map
@@ -1273,7 +1273,88 @@ construir programas de mayor complejidad.
 
 Paradigma de programacion: es una forma de ver y crear codigo de
 programacion. Para resolver problemas.
+
+
+Javascritp es un lenguaje de "multiple paradigma".
+
 */
 
+
+
+//-----------------Imperativa y Declarativa------------------------------------
+
+
+/*
+
+Un paradigma de programacion no es mas que una forma de ver
+y crear codigo de programación para resolver problemas.
+
+Existen diferentes formas de diseñar un lenguaje de
+programacion y vario modos de trabajar para obtener resultados
+que necesitan los programadores,
+
+Los lenguajes de programacion adoptan uno o varios
+paradigmas en funcion del tipo de ordenes que permiten
+implementar como, por ejemplo, python o javascript
+que son multiparadigma.
+
+Los paradigmas de programacion comunes incluyen:
+
+IMPERATIVO: (emperador) en el que el programador instruye
+a la maquina como cambiar su estado.
+    procedimental que agrupa las instrucciones en procedimientos.
+    Orientado a objetos(OPP o POO) que agrupa las instrucciones
+    con la parte del estado en el que operan.
+
+DECLARATIVO: en el que el programador simplemente
+las propiedades del resultado deseado, pero no como 
+calcularlo.
+    funcional en el que el resultado deseado se
+    declara como el valor de una serie de aplicaciones
+    de funcion.
+    logico en la que el resultado deseado se 
+    declara como la respuesta a una pregunta sobre 
+    un sistema de hechos y reglas.
+    Matematico en que el resultado deseado se declara
+    como la solucion de un problema de optimizacion.
+    Reactivo en el que se declara el resultado deseado
+    con flujos de datos y la propagacion del cambio.
+*/
+
+
+
+//-----------------Imperativa  VS Declarativa------------------------------------
+
+
+/*
+Programacion imperativa: Nosotros dictamos el camino a seguir a
+traves del control de flujo: variables, funciones, if, else
+switch, loops(while, for, for of, for in), try catch, async await.
+Por lo tanto siempre utilizas programacion imperativa en 
+Javascript.
+
+Programacion declarativa: Declaras lo que quieres que suceda, no
+como se hace. La programacion funcional basicamente significa
+escribir codigo que hace algo(declara lo que se hace)pero
+no es especifico sobre como hacerlo(imperativo).
+
+JAVASCRIPT PERMITE UN ESTILO DE DESARROLLO TANTO DECLARATIVO
+COMO IMPERATIVO, ATENDIENDO ASI A QUE OBJETIVO SE BUSCA
+ALCANZAR(DECLARATIVO)O EXTENDIENDOSE SOBRE COMO SE DEBE
+ALCANZAR UN OBJETO(IMPERATIVO)
+
+
+La programacion declarativa no puede existir sin la programacion
+imperativa, porque para que se ejecute debe haber una
+instruccion.
+
+CONCLUSION:
+
+Con Javascript podemos utilizar multiples paradigmas,
+por ende conoceremos algunos metodos que nos facilitan la
+vida para la programacion declarativa(funcional)pero
+seguiremos mezclando nuestra escritura con programacion
+imperativa.
+*/
 
 //console.log("mi nombre es alfredo y soy el mejor 🍔");
