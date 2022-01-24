@@ -1357,4 +1357,93 @@ seguiremos mezclando nuestra escritura con programacion
 imperativa.
 */
 
+
+//-----------------Array methods------------------------------------
+
+/*
+Estos metodos no mutan el array original, sino que nos
+devuelven uno nuevo.
+
+*/
+
+
+//-----------------METODO MAP------------------------------------
+
+/*
+El metodo Map iterara sobre casda elemento de un arreglo
+y devuelve un nuevo arreglo que contiene los resultados
+de llamar a la funcion callback en cada elemento. 
+Esto lo hace sin mutar el arreglo original.
+
+Una funcion callback es una funcion que se pasa a otra
+funcion como un argumento, que luego se invoca dentro
+de la funcion externa para completar algun tipo de 
+rutina o accion.
+
+Cuando se utiliza la funcion callback, se pasan tres
+argumentos. El primer argumento es el elemento actual
+que se esta procesando. El segundo es el indice de ese
+elemento y el tercero es el arreglo al que se llamo
+el metodo map.
+
+Map recorre el arreglo y nos devuelve un nuevo array, y 
+no muta el array original.
+
+ejemplo1
+const frutas = ["🍕","🍔","🍟"];
+
+const nuevoArray = frutas.map((item)=>item)
+console.log(nuevoArray);
+frutas.push("🌭")
+console.log(nuevoArray);
+
+ejemplo2
+const user = [
+    {name:"alfredo", age:29},
+    {name:"ashely", age:13},
+    {name:"ana", age:35}
+]
+const names = user.map(item=>(item.name));
+names.forEach((item)=>console.log(item));
+
+ejemplo3
+const numeros = [1,2,3,4,5,6,7,8,9,10]
+const numerosPorDos = numeros.map((num)=>num *2)
+console.log(numerosPorDos);
+
+
+*/
+
+
+
+//-----------------METODO FILTER------------------------------------
+
+/*
+El metodo filter() crea un nuevo array con todos los elementos
+que cumplan la condicion implementada por la funcion dada.
+
+ejemplo 1
+const users = [
+    {uid: 1 ,name:"alfredo", age:31},
+    {uid: 2 ,name:"ashely", age:13},
+    {uid: 3 ,name:"ana", age:35}
+]
+const mayores = users.filter((user)=>user.age >30)
+console.log(mayores);
+print:
+alfredo
+ana
+
+
+ejemplo 2
+const userFiltrado = users.filter((user)=> user.uid !==2 )
+console.log(userFiltrado);
+print:
+user con uid:1 y uid:3
+*/
+
+
+
+//users.forEach((item)=>console.log(item.age));
+
 //console.log("mi nombre es alfredo y soy el mejor 🍔");
