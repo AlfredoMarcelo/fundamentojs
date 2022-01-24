@@ -1516,27 +1516,83 @@ nueva de dos arrays, no los muta.
 El metodo Spread syntax permite a un elemento
 iterable tal como un arreglo o cadena(string) u
 obejto ser expandido en lugares donde son esperados.
-*/
-
-
-
+Es muy usado en fetch con los ..., tambien se pueden
+añadir elementos dentro de la union.
 const animals = ["gato","conejo","perro","burro"];
 
+//slice
 const newAnimals = animals.slice(1,3)
 console.log(newAnimals)
 
 const letrasA = ["a","b","c"]
 const letrasB = ["d","e","f"]
 
+//concat
 const letrasAB = letrasA.concat(letrasB);
 console.log(letrasAB);
 
-
+//spread syntax
 const letrasAC = [...letrasA,"-",...letrasB];
 console.log(letrasAC);
+*/
 
 
+//-----------------METODO REDUCE------------------------------------
 
+
+/*
+
+El metodo reduce() ejecuta una funcion reductora sobre
+cada elemento de un array, devolviendo como resultado
+un unico valor.
+
+const numeros = [1, 2, 3, 4, 5];
+
+const sumar = numeros.reduce(
+    (acumulador, valorActual)=>acumulador + valorActual
+)
+console.log(sumar)
+
+const arrrayNumeros = [
+    [0,1],
+    [2,3],
+    [4,5]
+];
+//reduce mas concat 
+const soloNumeros = arrrayNumeros.reduce(
+    (acumulador,current)=>acumulador.concat(current) 
+)
+console.log(soloNumeros)
+//reducir con concat y spread syntax
+const arrayPlano = [].concat(...arrrayNumeros);
+console.log(arrayPlano);
+//manera 2 (flat es nuevo, con cautela)
+const arrayPlanoDos = arrrayNumeros.flat();
+console.log(arrayPlanoDos)
+*/
+
+
+//-----------------METODO SPLIT Y JOIN------------------------------------
+
+
+/*
+
+El metodo split() divide un objeto de tipo string en 
+un array, mediante separador.
+
+El metodo join() une todos los elementos de una matriz
+(o un objeto similar a una matriz)en una cadena y 
+devuelve esta cadena. Si no se pasa un separador,
+por defecto join asignara una ",".
+
+const cadenaMeses = "jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec";
+//slice
+const arrayMeses = cadenaMeses.split(",")
+console.log(arrayMeses)
+//join
+const arrayMesesTexto = arrayMeses.join("<>");
+console.log(arrayMesesTexto)
+*/
 
 
 
