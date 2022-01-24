@@ -1444,6 +1444,102 @@ user con uid:1 y uid:3
 
 
 
+//-----------------METODO FIND,SOME Y FININDEX------------------------------------
+
+
+/*
+Para esto hay 3 metodos para buscar:
+
+El metodo find() devuelve el valor del primer elemento
+del array que cumple la funcion de prueba proporcionada.
+
+const alfredo = users.find((user)=>user.uid === 1)
+console.log(alfredo)
+
+El metodo some() comprueba si al menos un elemento del
+array cummple con la condicion implementada por la
+funcion proporcionada. Este metodo devuelve un 
+true o false.
+
+const existe = users.some((user)=>user.uid ===1)
+console.log(existe);
+
+El metodo findIndex() devuelve el indice del primer 
+elemento de un array que cumpla con la funcion de 
+prueba proporcionada. En caso contrario devuelve -1.
+Este metodo es util para validar.
+
+const indice = users.findIndex((user)=>user.uid ===3)
+console.log(indice)
+console.log(users[indice])//devuelve el user del indice indicado
+
+
+
+
+const users = [
+    {uid: 1 ,name:"alfredo", age:31},
+    {uid: 2 ,name:"ashely", age:13},
+    {uid: 3 ,name:"ana", age:35}
+]
+
+const alfredo = users.find((user)=>user.uid === 1)
+console.log(alfredo)
+
+const {age}= users.find((user)=>user.uid === 2)
+console.log(age);
+
+const existe = users.some((user)=>user.uid ===1)
+console.log(existe);
+
+const indice = users.findIndex((user)=>user.uid ===3)
+console.log(indice)
+console.log(users[indice])//devuelve el user del indice indicado
+*/
+
+
+
+//-----------------METODO SLICE, CONCAT Y SPREAD------------------------------------
+
+
+/*
+El metodo slice() devuelve una copia de una parte
+del array dentro de un nuevo array empezando por
+el inicio hasta el fin (fin no incluido). El
+array original no se modificara.
+
+El metodo concat() se usa para unir dos o mas arrays.
+Este metodo no cambia los arrays existentes, sino
+que devuelve un nuevo array. Devuelve la una copia
+nueva de dos arrays, no los muta.
+
+
+El metodo Spread syntax permite a un elemento
+iterable tal como un arreglo o cadena(string) u
+obejto ser expandido en lugares donde son esperados.
+*/
+
+
+
+const animals = ["gato","conejo","perro","burro"];
+
+const newAnimals = animals.slice(1,3)
+console.log(newAnimals)
+
+const letrasA = ["a","b","c"]
+const letrasB = ["d","e","f"]
+
+const letrasAB = letrasA.concat(letrasB);
+console.log(letrasAB);
+
+
+const letrasAC = [...letrasA,"-",...letrasB];
+console.log(letrasAC);
+
+
+
+
+
+
 //users.forEach((item)=>console.log(item.age));
 
 //console.log("mi nombre es alfredo y soy el mejor 🍔");
